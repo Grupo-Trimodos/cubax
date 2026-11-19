@@ -95,7 +95,7 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;font-family:var(--font);font-size:17px;line-height:1.6;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-a{color:var(--blue);text-underline-offset:.18em;text-decoration-thickness:1px}a:hover{color:var(--blue-d)}
+a{color:var(--blue);text-underline-offset:.18em;text-decoration-thickness:1px}
 ::selection{background:var(--blue);color:#fff}
 html{accent-color:var(--blue);scrollbar-color:#B9C3CD transparent}
 h1,h2,h3{margin:0;font-weight:600;letter-spacing:-0.015em;color:inherit;text-wrap:balance}
@@ -112,10 +112,10 @@ section[id]{scroll-margin-top:96px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:var(--r-sm);font:600 16px/1 var(--font);text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .16s var(--ease-out);white-space:nowrap;font-variant-numeric:tabular-nums}
 .btn:active,.chip:active,.acts a:active,.menu-btn:active,.save-link:active{transform:scale(.97)}
 .btn-sm{min-height:44px;padding:0 16px;font-size:15px}
-.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:var(--blue-d);color:#fff}
-.btn-outline{background:#fff;color:var(--ink);border-color:#C7CFD8}.btn-outline:hover{border-color:var(--ink);color:var(--ink)}
-.btn-white{background:#fff;color:var(--blue-d)}.btn-white:hover{background:var(--blue-l);color:var(--blue-d)}
-.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}.btn-ghost:hover{background:rgba(255,255,255,.1);color:#fff}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-outline{background:#fff;color:var(--ink);border-color:#C7CFD8}
+.btn-white{background:#fff;color:var(--blue-d)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
 .btn:focus-visible,.chip:focus-visible,summary:focus-visible,.menu-btn:focus-visible,a:focus-visible{outline:3px solid var(--blue-m);outline-offset:3px}
 
 /* section heads */
@@ -129,7 +129,7 @@ section[id]{scroll-margin-top:96px}
 /* topbar */
 .topbar{background:var(--navy);color:rgba(255,255,255,.82);font-size:14px;font-variant-numeric:tabular-nums}
 .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:42px}
-.topbar a{color:#fff;text-decoration:none;font-weight:500}.topbar a:hover{color:var(--blue-m)}
+.topbar a{color:#fff;text-decoration:none;font-weight:500}
 .tb-left,.tb-right{display:flex;align-items:center;gap:24px}
 .tb-item{display:flex;align-items:center;gap:8px}
 .tb-item .ic{width:16px;height:16px;color:var(--blue-m)}
@@ -145,7 +145,7 @@ section[id]{scroll-margin-top:96px}
 .brand .grp{height:15px;width:auto}
 .nav{display:flex;gap:30px}
 .nav a{white-space:nowrap;color:var(--ink);text-decoration:none;font-size:15px;font-weight:500;padding:8px 0;border-bottom:2px solid transparent}
-.nav a:hover{color:var(--blue);border-bottom-color:var(--blue)}
+
 .hdr-cta{display:flex;align-items:center;gap:10px}
 .menu-btn{display:none;width:48px;height:48px;border:1.5px solid var(--line);border-radius:var(--r-sm);background:#fff;color:var(--ink);cursor:pointer;align-items:center;justify-content:center}
 .mnav{display:none;border-top:1px solid var(--line);background:#fff}
@@ -159,7 +159,7 @@ section[id]{scroll-margin-top:96px}
 .h1{font-size:clamp(36px,4.6vw,60px);line-height:1.06;letter-spacing:-0.022em}
 .ctas{display:flex;flex-wrap:wrap;gap:12px}
 .save-link{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;min-height:44px;background:none;border:0;padding:0;cursor:pointer;font:600 15px var(--font);color:var(--blue)}
-.save-link:hover{color:var(--blue-d);text-decoration:underline}
+
 .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:var(--r);background:#fff;margin-top:6px}
 .fact{padding:18px 20px}
 .fact+.fact{border-left:1px solid var(--line)}
@@ -170,11 +170,6 @@ section[id]{scroll-margin-top:96px}
 .panel-top{display:flex;justify-content:space-between;align-items:center;gap:16px}
 .panel-top img{height:26px;width:auto}
 .status{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(8,19,31,.24);font-size:14px;font-weight:500}
-.fleet-art{margin:0;padding:8px 0 4px;color:var(--blue-l)}
-.fleet-art svg{display:block;width:100%;height:auto;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
-.fleet-art .g{opacity:.45}
-.fleet-art .hose{stroke:#fff}
-.fleet-art .d{stroke-dasharray:1;stroke-dashoffset:0}
 .panel-title{font-size:clamp(21px,1.9vw,25px);font-weight:600;line-height:1.3;letter-spacing:-.01em}
 .checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
 .checks li{display:flex;align-items:flex-start;gap:12px;font-size:15px;line-height:1.45;color:var(--blue-l)}
@@ -205,8 +200,18 @@ section[id]{scroll-margin-top:96px}
 .tk-top{display:flex;justify-content:space-between;align-items:center;gap:16px}
 .qty{display:inline-flex;align-items:baseline;gap:6px;padding:6px 12px;border-radius:var(--r-sm);background:rgba(127,182,222,.14);color:#fff;font-size:14px;font-weight:500;white-space:nowrap}
 .qty b{font-size:20px;font-weight:600;line-height:1}
-.tk-art{color:var(--blue-m);padding:8px 0 4px}
-.tk-art svg{display:block;width:100%;height:auto;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.truck{display:flex;justify-content:center;align-items:flex-end;position:relative;margin:0}
+.truck::after{content:"";position:absolute;left:12%;right:12%;bottom:-2px;height:14px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.45),transparent);z-index:0}
+.truck img{position:relative;z-index:1;display:block;max-width:100%;height:auto;object-fit:contain}
+.tk-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:end;justify-items:center;padding:8px 0 10px;min-height:260px}
+.tk-photos.one{grid-template-columns:1fr}
+.tk-photos .truck img{max-height:210px}
+.tk-photos.one .truck img{max-height:240px}
+.fleet-photo{margin:0;padding:10px 0 6px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.fleet-photo .big img{max-height:190px}
+.fleet-photo-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;align-items:end;justify-items:center}
+.fleet-photo-row img{max-height:140px}
+@media (max-width:760px){.tk-photos{min-height:0}.tk-photos .truck img{max-height:160px}}
 .tk h3{font-size:clamp(24px,2.4vw,30px);line-height:1.2}
 .tk p{color:rgba(255,255,255,.72);font-size:16px}
 .uses{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:4px}
@@ -233,7 +238,7 @@ section[id]{scroll-margin-top:96px}
 .svc-main .checks .ic{color:var(--blue-m)}
 .svc-main-cta{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:auto;padding-top:24px}
 .svc-wa{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:#fff;font-size:15px;font-weight:500;text-decoration:underline;text-decoration-color:rgba(255,255,255,.4)}
-.svc-wa:hover{color:#fff;text-decoration-color:#fff}
+
 .svc-wa .ic{width:18px;height:18px;color:var(--blue-m)}
 .svc-list{list-style:none;margin:0;padding:0 clamp(20px,2.4vw,32px);background:#fff;border:1px solid var(--line);border-radius:var(--r)}
 .svc-row{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:8px 20px;align-items:center;padding:22px 0}
@@ -285,7 +290,7 @@ section[id]{scroll-margin-top:96px}
 .note strong{color:var(--ink)}
 .note-ic{width:40px;height:40px;flex-shrink:0;border-radius:var(--r-sm);background:var(--blue-l);color:var(--blue);display:flex;align-items:center;justify-content:center}
 .arrow-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-weight:600;text-decoration:none;min-height:44px}
-.arrow-link:hover{text-decoration:underline}
+
 
 /* price */
 .price-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:start}
@@ -294,7 +299,7 @@ section[id]{scroll-margin-top:96px}
 .q-l span{font-weight:400;color:var(--muted)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:var(--r-sm);border:1.5px solid #CFD6DE;background:#fff;color:var(--ink);font:500 15px var(--font);cursor:pointer;transition:background-color .15s ease,border-color .15s ease,color .15s ease,transform .16s var(--ease-out)}
-.chip:hover{border-color:var(--blue)}
+
 .chip.on{background:var(--blue);border-color:var(--blue);color:#fff}
 .input{width:100%;max-width:420px;height:50px;padding:0 16px;border-radius:var(--r-sm);border:1.5px solid #CFD6DE;font:400 16px var(--font);color:var(--ink);background:#fff;caret-color:var(--blue);transition:border-color .15s ease,box-shadow .15s ease}
 .input::placeholder{color:var(--muted)}
@@ -326,7 +331,7 @@ section[id]{scroll-margin-top:96px}
 .acts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0 6px}
 .acts a{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 0;border-radius:var(--r-sm);background:var(--blue-l);color:var(--blue);text-decoration:none;font-size:12px;font-weight:600}
 .acts a{transition:background-color .15s ease,transform .16s var(--ease-out)}
-.acts a:hover{background:#D7E7F4;color:var(--blue-d)}
+
 .row{text-align:left;border-top:1px solid var(--line);padding-top:12px;margin-top:12px}
 .row small{display:block;font-size:12px;color:var(--muted)}
 .row div{font-size:15px}
@@ -339,14 +344,14 @@ section[id]{scroll-margin-top:96px}
 .faq{border-bottom:1px solid var(--line)}
 .faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0;cursor:pointer;font-size:20px;font-weight:500;color:var(--ink)}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary:hover{color:var(--blue)}
+
 .faq-i{display:flex;flex-shrink:0;width:40px;height:40px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue-l);color:var(--blue);transition:transform .25s var(--ease-out),background-color .2s ease,color .2s ease}
 .faq[open] .faq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
 .faq p{padding:0 64px 26px 0;color:var(--text)}
 
 /* footer */
 .foot{background:#08131F;color:#fff;padding:clamp(56px,7vw,80px) 0 32px}
-.foot a{color:rgba(255,255,255,.72);text-decoration:none}.foot a:hover{color:#fff}
+.foot a{color:rgba(255,255,255,.72);text-decoration:none}
 .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.12)}
 .foot-top .h2{font-size:clamp(26px,3vw,38px)}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding:44px 0}
@@ -390,11 +395,11 @@ address.foot-col{font-style:normal}
 }
 @media (max-width:860px){
 .fleet,.eq-grid{grid-template-columns:1fr}
-.tk-art svg{max-width:460px}
-.tk-art.big svg{max-width:386px}
 }
 @media (max-width:640px){
-body{font-size:16px;padding-bottom:74px}
+.map{aspect-ratio:1000/1380}
+body{font-size:16px}
+.foot{padding-bottom:calc(32px + 74px + env(safe-area-inset-bottom))}
 .topbar .wrap{justify-content:center}
 .tb-right{display:none}
 .hdr .wrap{height:66px}
@@ -436,14 +441,29 @@ body{font-size:16px;padding-bottom:74px}
 .mbar{display:flex}
 }
 @media (prefers-reduced-motion:no-preference){
-.fleet-art .d{animation:draw 1.6s var(--ease-out) both}
-.fleet-art .t2 .d{animation-delay:.18s}
-.fleet-art .t3 .d{animation-delay:.32s}
-.fleet-art .g{animation:fade-in .6s ease .6s both}
-@keyframes draw{from{stroke-dashoffset:1}}
-@keyframes fade-in{from{opacity:0}}
+.fleet-photo .truck{animation:truck-in .7s var(--ease-out) both}
+.fleet-photo .big{animation-delay:.05s}
+.fleet-photo-row .truck:nth-child(1){animation-delay:.14s}
+.fleet-photo-row .truck:nth-child(2){animation-delay:.21s}
+@keyframes truck-in{from{opacity:0;transform:translateY(12px);filter:blur(6px)}}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (hover:hover) and (pointer:fine){
+a:hover{color:var(--blue-d)}
+.btn-primary:hover{background:var(--blue-d);color:#fff}
+.btn-outline:hover{border-color:var(--ink);color:var(--ink)}
+.btn-white:hover{background:var(--blue-l);color:var(--blue-d)}
+.btn-ghost:hover{background:rgba(255,255,255,.1);color:#fff}
+.topbar a:hover{color:var(--blue-m)}
+.nav a:hover{color:var(--blue);border-bottom-color:var(--blue)}
+.save-link:hover{color:var(--blue-d);text-decoration:underline}
+.svc-wa:hover{color:#fff;text-decoration-color:#fff}
+.arrow-link:hover{text-decoration:underline}
+.chip:hover{border-color:var(--blue)}
+.acts a:hover{background:#D7E7F4;color:var(--blue-d)}
+.faq summary:hover{color:var(--blue)}
+.foot a:hover{color:#fff}
+}
 </style>
 </head>
 <body>
@@ -475,20 +495,6 @@ body{font-size:16px;padding-bottom:74px}
 <symbol id="i-septic" viewBox="0 0 24 24"><path d="M2 9h20"/><path d="M12 9v3"/><rect x="4" y="12" width="16" height="8" rx="4"/></symbol>
 <symbol id="i-sewer" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7 9h10M6 12h12M7 15h10"/></symbol>
 <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/></symbol>
-<symbol id="truck-s" viewBox="0 0 300 210">
-<path d="M4 192H296" stroke-dasharray="3 7" opacity=".5"/>
-<rect x="36" y="82" width="150" height="84" rx="42"/>
-<path d="M92 82v84" opacity=".45"/>
-<rect x="104" y="70" width="44" height="12" rx="3"/>
-<path d="M156 82V64h22v18"/>
-<path d="M28 170H286"/>
-<path d="M194 170V112q0-20 20-20h40l32 38v40"/>
-<path d="M212 106h38l24 28h-62z"/>
-<circle cx="98" cy="174" r="18"/><circle cx="98" cy="174" r="6"/>
-<circle cx="250" cy="174" r="18"/><circle cx="250" cy="174" r="6"/>
-<circle cx="62" cy="124" r="13"/><circle cx="62" cy="124" r="3.5"/>
-<path d="M36 136c-20 4-24 26-12 38s-6 18-18 18" stroke="#fff"/>
-</symbol>
 </svg>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 
@@ -541,7 +547,7 @@ body{font-size:16px;padding-bottom:74px}
 <section class="hero">
 <div class="wrap hero-grid">
 <div class="hero-copy">
-<h1 class="h1">Desatascos y camión cuba en Castellón, a cualquier hora.</h1>
+<h1 class="h1">Desatascos y camión cuba en Castellón, a&nbsp;cualquier hora.</h1>
 <p class="lead">Desatascos urgentes, fosas sépticas y alcantarillado en toda La Plana. <strong>Te damos el precio antes de empezar, sin sorpresas.</strong></p>
 <div class="ctas">
 <a class="btn btn-primary" href="tel:+34607462526"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Llamar al 607 462 526</a>
@@ -556,16 +562,10 @@ body{font-size:16px;padding-bottom:74px}
 </div>
 <div class="panel">
 <div class="panel-top">
-<img src="img/cubax-logo-blanco.png" width="360" height="88" alt="">
+<img src="img/cubax-logo-blanco.png" width="360" height="88" alt="Cubax, desatascos y limpiezas">
 <span class="status"><span class="dot"></span>Urgencias 24 h</span>
 </div>
-<figure class="fleet-art">
-<svg viewBox="0 0 620 360" role="img" aria-label="La flota de Cubax: un camión cuba de gran capacidad y dos compactos">
-<g class="t1" transform="translate(50 0)"><path class="g" d="M10 192H510" stroke-dasharray="3 7"/><rect class="d" pathLength="1" x="44" y="56" width="300" height="110" rx="55"/><path class="d" pathLength="1" d="M100 56v110M290 56v110" opacity=".45"/><rect class="d" pathLength="1" x="150" y="42" width="70" height="14" rx="3"/><path class="d" pathLength="1" d="M232 56v-22h30v22"/><path class="d" pathLength="1" d="M36 170H486"/><path class="d" pathLength="1" d="M352 170V92q0-22 22-22h62l46 50v50"/><path class="d" pathLength="1" d="M376 86h54l34 36h-88z"/><circle class="d" pathLength="1" cx="112" cy="174" r="20"/><circle class="d" pathLength="1" cx="112" cy="174" r="7"/><circle class="d" pathLength="1" cx="164" cy="174" r="20"/><circle class="d" pathLength="1" cx="164" cy="174" r="7"/><circle class="d" pathLength="1" cx="430" cy="174" r="20"/><circle class="d" pathLength="1" cx="430" cy="174" r="7"/><path class="d hose" pathLength="1" d="M44 128c-26 4-30 34-14 50s-8 14-22 14"/><circle class="d" pathLength="1" cx="72" cy="111" r="16"/><circle class="d" pathLength="1" cx="72" cy="111" r="4"/></g>
-<g class="t2" transform="translate(0 150)"><path class="g" d="M4 192H296" stroke-dasharray="3 7"/><rect class="d" pathLength="1" x="36" y="82" width="150" height="84" rx="42"/><path class="d" pathLength="1" d="M92 82v84" opacity=".45"/><rect class="d" pathLength="1" x="104" y="70" width="44" height="12" rx="3"/><path class="d" pathLength="1" d="M156 82V64h22v18"/><path class="d" pathLength="1" d="M28 170H286"/><path class="d" pathLength="1" d="M194 170V112q0-20 20-20h40l32 38v40"/><path class="d" pathLength="1" d="M212 106h38l24 28h-62z"/><circle class="d" pathLength="1" cx="98" cy="174" r="18"/><circle class="d" pathLength="1" cx="98" cy="174" r="6"/><circle class="d" pathLength="1" cx="250" cy="174" r="18"/><circle class="d" pathLength="1" cx="250" cy="174" r="6"/><circle class="d" pathLength="1" cx="62" cy="124" r="13"/><circle class="d" pathLength="1" cx="62" cy="124" r="3.5"/><path class="d hose" pathLength="1" d="M36 136c-20 4-24 26-12 38s-6 18-18 18"/></g>
-<g class="t3" transform="translate(320 150)"><path class="g" d="M4 192H296" stroke-dasharray="3 7"/><rect class="d" pathLength="1" x="36" y="82" width="150" height="84" rx="42"/><path class="d" pathLength="1" d="M92 82v84" opacity=".45"/><rect class="d" pathLength="1" x="104" y="70" width="44" height="12" rx="3"/><path class="d" pathLength="1" d="M156 82V64h22v18"/><path class="d" pathLength="1" d="M28 170H286"/><path class="d" pathLength="1" d="M194 170V112q0-20 20-20h40l32 38v40"/><path class="d" pathLength="1" d="M212 106h38l24 28h-62z"/><circle class="d" pathLength="1" cx="98" cy="174" r="18"/><circle class="d" pathLength="1" cx="98" cy="174" r="6"/><circle class="d" pathLength="1" cx="250" cy="174" r="18"/><circle class="d" pathLength="1" cx="250" cy="174" r="6"/><circle class="d" pathLength="1" cx="62" cy="124" r="13"/><circle class="d" pathLength="1" cx="62" cy="124" r="3.5"/><path class="d hose" pathLength="1" d="M36 136c-20 4-24 26-12 38s-6 18-18 18"/></g>
-</svg>
-</figure>
+<figure class="fleet-photo"><picture class="truck big"><source srcset="img/cuba-gran-capacidad.webp" type="image/webp"><img src="img/cuba-gran-capacidad.png" alt="Camión cuba de gran capacidad de Cubax" decoding="async"></picture><div class="fleet-photo-row"><picture class="truck"><source srcset="img/cuba-fuso-canter.webp" type="image/webp"><img src="img/cuba-fuso-canter.png" alt="Cuba compacta de Cubax (Mitsubishi Fuso Canter)" decoding="async"></picture><picture class="truck"><source srcset="img/cuba-sprinter.webp" type="image/webp"><img src="img/cuba-sprinter.png" alt="Cuba compacta de Cubax (Mercedes-Benz Sprinter)" decoding="async"></picture></div></figure>
 <p class="panel-title">Tres camiones cuba propios. Salimos a cualquier hora, también en festivos.</p>
 <ul class="checks">
 <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Dos compactas para calles estrechas y garajes</li>
@@ -659,32 +659,14 @@ body{font-size:16px;padding-bottom:74px}
 <div class="fleet">
 <article class="tk">
 <div class="tk-top"><span class="eq-lbl">Accesos difíciles</span><span class="qty"><b>2</b>unidades</span></div>
-<div class="tk-art">
-<svg viewBox="0 0 620 210" role="img" aria-label="Dos camiones cuba compactos"><use href="#truck-s" x="0" y="0" width="300" height="210"/><use href="#truck-s" x="320" y="0" width="300" height="210"/></svg>
-</div>
+<div class="tk-photos"><picture class="truck"><source srcset="img/cuba-fuso-canter.webp" type="image/webp"><img src="img/cuba-fuso-canter.png" alt="Cuba compacta de Cubax (Mitsubishi Fuso Canter)" loading="lazy" decoding="async"></picture><picture class="truck"><source srcset="img/cuba-sprinter.webp" type="image/webp"><img src="img/cuba-sprinter.png" alt="Cuba compacta de Cubax (Mercedes-Benz Sprinter)" loading="lazy" decoding="async"></picture></div>
 <h3>Cubas compactas</h3>
 <p>Entran donde un camión grande no cabe: cascos antiguos, calles estrechas, garajes, urbanizaciones y casas de campo. Ideales para desatascos, arquetas y fosas de viviendas.</p>
 <div class="uses"><span>Cascos antiguos</span><span>Calles estrechas</span><span>Garajes</span><span>Urbanizaciones</span><span>Casas de campo</span></div>
 </article>
 <article class="tk">
 <div class="tk-top"><span class="eq-lbl">Gran volumen</span><span class="qty"><b>1</b>unidad</span></div>
-<div class="tk-art big">
-<svg viewBox="0 0 520 210" role="img" aria-label="Camión cuba de gran capacidad">
-<path d="M10 192H510" stroke-dasharray="3 7" opacity=".5"/>
-<rect x="44" y="56" width="300" height="110" rx="55"/>
-<path d="M100 56v110M290 56v110" opacity=".45"/>
-<rect x="150" y="42" width="70" height="14" rx="3"/>
-<path d="M232 56v-22h30v22"/>
-<path d="M36 170H486"/>
-<path d="M352 170V92q0-22 22-22h62l46 50v50"/>
-<path d="M376 86h54l34 36h-88z"/>
-<circle cx="112" cy="174" r="20"/><circle cx="112" cy="174" r="7"/>
-<circle cx="164" cy="174" r="20"/><circle cx="164" cy="174" r="7"/>
-<circle cx="430" cy="174" r="20"/><circle cx="430" cy="174" r="7"/>
-<path d="M44 128c-26 4-30 34-14 50s-8 14-22 14" stroke="#fff"/>
-<circle cx="72" cy="111" r="16"/><circle cx="72" cy="111" r="4"/>
-</svg>
-</div>
+<div class="tk-photos one"><picture class="truck"><source srcset="img/cuba-gran-capacidad.webp" type="image/webp"><img src="img/cuba-gran-capacidad.png" alt="Camión cuba de gran capacidad de Cubax" loading="lazy" decoding="async"></picture></div>
 <h3>Cuba de gran capacidad</h3>
 <p>Para los trabajos de mucho volumen: fosas sépticas y pozos negros grandes, alcantarillado, polígonos e industria. Menos viajes, más rapidez y traslado de residuos incluido.</p>
 <div class="uses"><span>Fosas grandes</span><span>Pozos negros</span><span>Alcantarillado</span><span>Industria</span><span>Ayuntamientos</span></div>
@@ -770,6 +752,7 @@ body{font-size:16px;padding-bottom:74px}
 <span class="t l" style="left:36.1%;top:65.8%">Nules</span>
 <span class="t" style="left:37.1%;top:71.9%">Moncofa</span>
 <span class="t l" style="left:27.6%;top:69.9%">La Vall d'Uixó</span>
+<span class="t" style="left:33.4%;top:75.6%">Xilxes</span>
 <span class="t l" style="left:28.2%;top:79.5%">Almenara</span>
 <span class="t out l" style="left:23.3%;top:89.2%">Sagunt</span>
 <span class="base" style="left:48.4%;top:47.8%"></span>
@@ -780,7 +763,6 @@ body{font-size:16px;padding-bottom:74px}
 </div>
 <div class="zone-side">
 <div class="zbox zbox-blue">
-<span class="lbl">Dos bases operativas</span>
 <b>Castellón y Burriana, siempre cerca.</b>
 <p>Repartimos los avisos entre las dos bases y los tres camiones cuba para llegar antes. En Castellón ciudad, menos de 60 minutos; en el resto de la zona te damos hora al llamar.</p>
 </div>
