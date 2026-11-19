@@ -28,7 +28,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap">
+<link rel="preload" as="image" href="img/portada-cuba-1600.webp" type="image/webp" imagesrcset="img/portada-cuba-900.webp 900w, img/portada-cuba-1600.webp 1600w" imagesizes="(max-width:900px) 100vw, 46vw">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <script type="application/ld+json">
 {
 "@context":"https://schema.org",
@@ -85,7 +86,7 @@
 :root{
 --blue:#006DB6;--blue-d:#00548C;--blue-l:#E8F1F8;--blue-m:#7FB6DE;
 --navy:#0A1F33;--navy-2:#0F2A44;--ink:#111A24;--text:#46505C;--muted:#5E6974;
---line:#E1E6EB;--line-2:#D5DCE3;--bg:#FFFFFF;--alt:#F4F6F8;
+--line:#E1E6EB;--line-2:#D5DCE3;--bg:#F4F7FA;--alt:#E9EFF5;--card:#FFFFFF;
 --r:10px;--r-sm:6px;
 --ease-out:cubic-bezier(.23,1,.32,1);
 --font:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
@@ -118,6 +119,12 @@ section[id]{scroll-margin-top:96px}
 .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
 .btn:focus-visible,.chip:focus-visible,summary:focus-visible,.menu-btn:focus-visible,a:focus-visible{outline:3px solid var(--blue-m);outline-offset:3px}
 
+
+/* fondo: cuadrícula de plano + grano */
+.hero::before,.sec:not(.dark)::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(0,109,182,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,109,182,.07) 1px,transparent 1px);background-size:56px 56px;background-position:center top;-webkit-mask-image:radial-gradient(80% 75% at 50% 35%,#000 20%,transparent 85%);mask-image:radial-gradient(80% 75% at 50% 35%,#000 20%,transparent 85%)}
+.sec:not(.dark){position:relative;isolation:isolate}
+.sec-alt::before{background-image:radial-gradient(rgba(0,84,140,.13) 1px,transparent 1.2px)!important;background-size:22px 22px!important;-webkit-mask-image:linear-gradient(180deg,transparent,#000 25%,#000 75%,transparent)!important;mask-image:linear-gradient(180deg,transparent,#000 25%,#000 75%,transparent)!important}
+body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.07;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 /* section heads */
 .h2{font-size:clamp(30px,3.6vw,46px);line-height:1.12}
 .lead{font-size:clamp(17px,1.4vw,19px);color:var(--text);max-width:560px}
@@ -153,29 +160,29 @@ section[id]{scroll-margin-top:96px}
 .mnav.open{display:block}
 
 /* hero */
-.hero{padding:clamp(40px,6vw,88px) 0 clamp(56px,7vw,96px);background:#fff;border-bottom:1px solid var(--line)}
+.hero{padding:clamp(40px,6vw,88px) 0 clamp(56px,7vw,96px);border-bottom:1px solid var(--line);position:relative;isolation:isolate;background:radial-gradient(60% 70% at 78% 40%,rgba(0,109,182,.13),transparent 70%),radial-gradient(40% 50% at 10% 0%,rgba(127,182,222,.18),transparent 70%)}
 .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(32px,5vw,64px);align-items:stretch}
 .hero-copy{display:flex;flex-direction:column;justify-content:center;gap:26px}
 .h1{font-size:clamp(36px,4.6vw,60px);line-height:1.06;letter-spacing:-0.022em}
 .ctas{display:flex;flex-wrap:wrap;gap:12px}
-.save-link{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;min-height:44px;background:none;border:0;padding:0;cursor:pointer;font:600 15px var(--font);color:var(--blue)}
 
-.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:var(--r);background:#fff;margin-top:6px}
-.fact{padding:18px 20px}
-.fact+.fact{border-left:1px solid var(--line)}
-.fact b{display:block;font-size:22px;font-weight:600;line-height:1.2;white-space:nowrap;font-variant-numeric:tabular-nums}
-.fact span{display:block;font-size:14px;color:var(--muted);margin-top:4px;line-height:1.4}
 
-.panel{position:relative;border-radius:var(--r);background:var(--blue);color:#fff;padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:clamp(18px,2.2vw,26px);box-shadow:0 30px 60px -30px rgba(0,0,0,.4)}
-.panel-top{display:flex;justify-content:space-between;align-items:center;gap:16px}
-.panel-top img{height:26px;width:auto}
-.status{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(8,19,31,.24);font-size:14px;font-weight:500}
-.panel-title{font-size:clamp(21px,1.9vw,25px);font-weight:600;line-height:1.3;letter-spacing:-.01em}
+
+
+
+
+
+
+
+
+
+
+
 .checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
 .checks li{display:flex;align-items:flex-start;gap:12px;font-size:15px;line-height:1.45;color:var(--blue-l)}
 .checks .ic{width:18px;height:18px;margin-top:2px;color:#fff}
-.group-line{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.22);font-size:13px;color:var(--blue-l)}
-.group-line img{height:16px;width:auto}
+
+
 
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;position:relative}
@@ -196,26 +203,26 @@ section[id]{scroll-margin-top:96px}
 .dark .sec-head p{color:rgba(255,255,255,.72)}
 .eq-lbl{font-size:15px;font-weight:600;color:var(--blue-m)}
 .fleet{display:grid;grid-template-columns:minmax(0,62fr) minmax(0,52fr);gap:16px}
-.tk{border:1px solid rgba(255,255,255,.14);border-radius:var(--r);background:rgba(255,255,255,.03);padding:30px;display:flex;flex-direction:column;gap:16px}
-.tk-top{display:flex;justify-content:space-between;align-items:center;gap:16px}
-.qty{display:inline-flex;align-items:baseline;gap:6px;padding:6px 12px;border-radius:var(--r-sm);background:rgba(127,182,222,.14);color:#fff;font-size:14px;font-weight:500;white-space:nowrap}
-.qty b{font-size:20px;font-weight:600;line-height:1}
-.truck{display:flex;justify-content:center;align-items:flex-end;position:relative;margin:0}
-.truck::after{content:"";position:absolute;left:12%;right:12%;bottom:-2px;height:14px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.45),transparent);z-index:0}
-.truck img{position:relative;z-index:1;display:block;max-width:100%;height:auto;object-fit:contain}
-.tk-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:end;justify-items:center;padding:8px 0 10px;min-height:260px}
-.tk-photos.one{grid-template-columns:1fr}
-.tk-photos .truck img{max-height:210px}
-.tk-photos.one .truck img{max-height:240px}
-.fleet-photo{margin:0;padding:10px 0 6px;display:flex;flex-direction:column;align-items:center;gap:14px}
-.fleet-photo .big img{max-height:190px}
-.fleet-photo-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;align-items:end;justify-items:center}
-.fleet-photo-row img{max-height:140px}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width:760px){.tk-photos{min-height:0}.tk-photos .truck img{max-height:160px}}
-.tk h3{font-size:clamp(24px,2.4vw,30px);line-height:1.2}
-.tk p{color:rgba(255,255,255,.72);font-size:16px}
-.uses{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:4px}
-.uses span{font-size:13px;font-weight:500;padding:6px 12px;border-radius:var(--r-sm);background:rgba(255,255,255,.08);color:rgba(255,255,255,.85)}
+
+
+
+
 .sub-h{margin:clamp(56px,6vw,80px) 0 28px;font-size:clamp(22px,2vw,26px);line-height:1.3;color:#fff}
 .eq-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px clamp(24px,3vw,40px)}
 .eq{padding-top:24px;border-top:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;gap:10px}
@@ -384,7 +391,7 @@ address.foot-col{font-style:normal}
 .nav,.hdr-cta .btn-outline,.tb-left .hide-md{display:none}
 .menu-btn{display:inline-flex}
 .hero-grid{grid-template-columns:1fr}
-.panel{min-height:0}
+
 .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 0}
 .step:nth-child(2)::before{display:none}
 .zone-grid,.price-grid,.save,.sec-head,.faq-wrap,.svc-wrap{grid-template-columns:1fr}
@@ -408,12 +415,12 @@ body{font-size:16px}
 .hdr-cta .btn-primary{min-height:46px;padding:0 14px}
 .hdr-cta .btn-primary span{display:none}
 .ctas .btn{flex:1 1 100%}
-.facts{grid-template-columns:1fr}
-.fact+.fact{border-left:0;border-top:1px solid var(--line)}
-.fact{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:14px 18px}
-.fact b{font-size:18px}
-.fact span{margin:0;text-align:right}
-.panel{display:none}
+
+
+
+
+
+
 .steps{grid-template-columns:1fr;gap:0}
 .step{padding:0 0 32px 76px}
 .step-n{position:absolute;left:0;top:0;margin:0}
@@ -441,11 +448,11 @@ body{font-size:16px}
 .mbar{display:flex}
 }
 @media (prefers-reduced-motion:no-preference){
-.fleet-photo .truck{animation:truck-in .7s var(--ease-out) both}
-.fleet-photo .big{animation-delay:.05s}
-.fleet-photo-row .truck:nth-child(1){animation-delay:.14s}
-.fleet-photo-row .truck:nth-child(2){animation-delay:.21s}
-@keyframes truck-in{from{opacity:0;transform:translateY(12px);filter:blur(6px)}}
+
+
+
+
+@keyframes truck-in{from{opacity:0;transform:translateY(12px)}}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media (hover:hover) and (pointer:fine){
@@ -456,7 +463,7 @@ a:hover{color:var(--blue-d)}
 .btn-ghost:hover{background:rgba(255,255,255,.1);color:#fff}
 .topbar a:hover{color:var(--blue-m)}
 .nav a:hover{color:var(--blue);border-bottom-color:var(--blue)}
-.save-link:hover{color:var(--blue-d);text-decoration:underline}
+
 .svc-wa:hover{color:#fff;text-decoration-color:#fff}
 .arrow-link:hover{text-decoration:underline}
 .chip:hover{border-color:var(--blue)}
@@ -464,6 +471,134 @@ a:hover{color:var(--blue-d)}
 .faq summary:hover{color:var(--blue)}
 .foot a:hover{color:#fff}
 }
+
+/* ===== Rediseño 2026: confianza y pedir precio ===== */
+:root{--display:'Outfit','IBM Plex Sans',system-ui,sans-serif;--r:16px;--r-sm:10px;--shadow:0 1px 2px rgba(10,31,51,.06),0 12px 32px -16px rgba(10,31,51,.28);--shadow-lg:0 2px 4px rgba(10,31,51,.06),0 40px 80px -36px rgba(10,31,51,.45)}
+h1,h2,h3,.fact b,.pf b,.step-n{font-family:var(--display)}
+h1,h2{letter-spacing:-0.025em;font-weight:600}
+h3{letter-spacing:-0.01em}
+.h1{font-size:clamp(40px,5.2vw,72px);line-height:1;letter-spacing:-0.035em}
+.h2{font-size:clamp(32px,3.8vw,52px);line-height:1.04}
+.lead{font-size:clamp(17px,1.35vw,20px);line-height:1.55;max-width:34em}
+
+/* cabeceras de sección apiladas (sin titular partido) */
+.sec-head{display:flex;flex-direction:column;align-items:flex-start;gap:16px;max-width:760px;margin-bottom:clamp(40px,5vw,64px)}
+.sec-head p{max-width:60ch;font-size:clamp(16px,1.2vw,18px)}
+
+/* botones */
+.btn{border-radius:var(--r-sm);letter-spacing:-0.005em}
+.btn-primary{background:var(--blue);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 10px 24px -12px rgba(0,109,182,.75)}
+.btn-outline{background:#fff;border-color:var(--line-2)}
+.btn-lg{min-height:58px;padding:0 28px;font-size:17px}
+.btn .ic{width:19px;height:19px}
+.btn-primary .ic{transition:transform .2s var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.btn-primary:hover .ic{transform:translateX(3px)}.btn-primary[href^="tel"]:hover .ic{transform:none}}
+
+/* cabecera */
+.hdr .wrap{height:72px}
+.nav{gap:28px}
+
+.hdr .btn-primary{min-height:46px;padding:0 18px;font-size:15px}
+
+/* portada */
+.hero{padding:clamp(36px,5vw,72px) 0 clamp(40px,5vw,72px);border-bottom:0}
+.hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,72px);align-items:center}
+.hero-copy{gap:24px}
+.live{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;padding:7px 14px 7px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);font-size:14px;font-weight:500;color:var(--ink)}
+.live .dot{position:relative}
+.live .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid #2BD47D;opacity:0}
+@media (prefers-reduced-motion:no-preference){.live .dot::after{animation:ping 2.4s var(--ease-out) infinite}@keyframes ping{0%{transform:scale(.6);opacity:.7}80%,100%{transform:scale(1.6);opacity:0}}}
+.hero .ctas{gap:12px;margin-top:6px}
+.hero-media{margin:0;position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/4.4;box-shadow:var(--shadow-lg);background:#DDE6EE}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:58% 55%}
+.hero-media::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(10,31,51,.08);pointer-events:none}
+
+/* franja de confianza */
+.proof{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;z-index:1}
+.proof-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;align-items:center}
+.pf{padding:26px 24px;display:flex;flex-direction:column;gap:6px}
+.pf+.pf{border-left:1px solid var(--line)}
+.pf:first-child{padding-left:0}
+.pf b{font-size:clamp(24px,2.2vw,30px);font-weight:600;line-height:1.05;color:var(--navy);letter-spacing:-0.02em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pf span{font-size:14px;line-height:1.4;color:var(--muted)}
+.pf-grp{align-items:flex-start;gap:10px;padding-right:0}
+.pf-grp span{font-size:13px}
+.pf-grp img{height:18px;width:auto}
+
+/* servicios */
+.svc-main{border-radius:var(--r);background:radial-gradient(120% 80% at 100% 0%,rgba(0,109,182,.45),transparent 60%),var(--navy);box-shadow:var(--shadow-lg)}
+.svc-main h3{font-size:clamp(28px,2.6vw,36px)}
+.svc-list{border-radius:var(--r);box-shadow:var(--shadow);border-color:transparent}
+.svc-row h3{font-size:19px}
+
+/* proceso */
+.step-n{font-weight:600;font-size:18px}
+.step h3{font-size:22px}
+
+/* flota: fotos reales */
+.fleet{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-rows:auto auto;gap:16px}
+.fl{margin:0;position:relative;border-radius:var(--r);overflow:hidden;background:#0F2A44;display:flex;flex-direction:column}
+.fl picture{display:block;overflow:hidden}
+.fl img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.fl-big{grid-row:span 2}
+.fl-big picture{flex:1}
+.fl-big img{height:100%;aspect-ratio:auto;min-height:100%}
+.fl figcaption{padding:18px 22px 20px;display:flex;flex-direction:column;gap:4px;border-top:1px solid rgba(255,255,255,.08)}
+.fl figcaption b{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-0.01em}
+.fl figcaption span{font-size:15px;color:rgba(255,255,255,.7);line-height:1.5}
+@media (hover:hover) and (pointer:fine){.fl img{transition:transform .6s var(--ease-out)}.fl:hover img{transform:scale(1.03)}}
+.fleet-cta{border-radius:var(--r)}
+
+/* clientes y zona */
+.cl-maint{border-radius:var(--r)}
+.zbox,.map{border-radius:var(--r)}
+.zbox{box-shadow:var(--shadow);border-color:transparent}
+
+/* presupuesto: el bloque que convierte */
+#presupuesto .h2{font-size:clamp(34px,4vw,56px)}
+.chip{border-radius:var(--r-sm)}
+.chat{border-radius:var(--r);box-shadow:var(--shadow-lg)}
+.input{border-radius:var(--r-sm)}
+
+/* contacto, faq, pie */
+.save{border-radius:24px}
+.card{border-radius:var(--r)}
+.faq summary span:first-child{font-family:var(--display);font-weight:500;font-size:clamp(17px,1.4vw,20px);letter-spacing:-0.01em}
+.foot-top .h2{font-size:clamp(28px,3vw,40px)}
+
+/* entrada de la portada: un único momento */
+@media (prefers-reduced-motion:no-preference){
+.hero-copy>*{animation:rise .7s var(--ease-out) both}
+.hero-copy>:nth-child(2){animation-delay:.06s}
+.hero-copy>:nth-child(3){animation-delay:.12s}
+.hero-copy>:nth-child(4){animation-delay:.18s}
+.hero-media{animation:media-in .9s var(--ease-out) .1s both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+@keyframes media-in{from{opacity:0;transform:scale(.97)}}
+}
+
+
+/* ajustes */
+.h1{font-size:clamp(38px,4.3vw,62px);line-height:1.02}
+.hero-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.hero-media{aspect-ratio:5/4.6}
+.hero-media img{object-position:46% 60%}
+.fl img{height:auto}
+.fl-big picture{position:relative;min-height:320px}
+.fl-big img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;min-height:0;object-position:45% 60%}
+.fl:not(.fl-big) img{object-position:50% 55%}
+.fleet{grid-template-columns:1fr 1fr}
+.fl-big{grid-column:1/-1;grid-row:auto;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+.fl-big picture{position:static;min-height:0}
+.fl-big img{position:static;height:100%;aspect-ratio:16/10;object-position:40% 62%}
+.fl-big figcaption{border-top:0;border-left:1px solid rgba(255,255,255,.08);justify-content:center;padding:32px 36px;gap:10px}
+.fl-big figcaption b{font-size:clamp(24px,2.2vw,32px)}
+.fl-big figcaption span{font-size:16px}
+@media (max-width:980px){.fl-big{grid-template-columns:1fr}.fl-big figcaption{border-left:0;border-top:1px solid rgba(255,255,255,.08);padding:18px 22px 20px}}
+/* responsive */
+@media (max-width:1100px){.proof-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.pf-grp{grid-column:1/-1;flex-direction:row;align-items:center;border-left:0!important;border-top:1px solid var(--line);padding:16px 0}.hdr-quote{display:none}}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr}.hero-media{aspect-ratio:16/10;order:2}.fleet{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.proof-grid{grid-template-columns:1fr 1fr}.pf{padding:18px 16px}.pf:nth-child(odd){padding-left:0;border-left:0}.pf:nth-child(n+3){border-top:1px solid var(--line)}.fleet{grid-template-columns:1fr}.hero .ctas .btn{flex:1 1 100%}}
 </style>
 </head>
 <body>
@@ -501,7 +636,7 @@ a:hover{color:var(--blue-d)}
 <div class="topbar" id="top">
 <div class="wrap">
 <div class="tb-left">
-<span class="tb-item"><span class="dot"></span>Urgencias 24 horas, los 365 días</span>
+<span class="tb-item"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg>Urgencias 24 horas, los 365 días</span>
 <span class="tb-item hide-md"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Bases en Castellón y Burriana</span>
 </div>
 <div class="tb-right">
@@ -547,33 +682,28 @@ a:hover{color:var(--blue-d)}
 <section class="hero">
 <div class="wrap hero-grid">
 <div class="hero-copy">
-<h1 class="h1">Desatascos y camión cuba en Castellón, a&nbsp;cualquier hora.</h1>
-<p class="lead">Desatascos urgentes, fosas sépticas y alcantarillado en toda La Plana. <strong>Te damos el precio antes de empezar, sin sorpresas.</strong></p>
+<p class="live"><span class="dot" aria-hidden="true"></span>Atendemos ahora, 24 h los 365 días</p>
+<h1 class="h1">Desatascos y camión cuba en Castellón, 24&nbsp;horas.</h1>
+<p class="lead">Llegamos en menos de 60 minutos a Castellón y el Grao. Te damos el precio antes de empezar, sin sorpresas.</p>
 <div class="ctas">
-<a class="btn btn-primary" href="tel:+34607462526"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Llamar al 607 462 526</a>
-<a class="btn btn-outline" href="#presupuesto">Solicitar presupuesto</a>
-</div>
-<button class="save-link" type="button" data-save><svg class="ic" aria-hidden="true"><use href="#i-useradd"/></svg>Guardar Cubax en mis contactos</button>
-<div class="facts">
-<div class="fact"><b>24 h</b><span>Urgencias los 365 días del año</span></div>
-<div class="fact"><b>&lt; 60 min</b><span>Llegada en Castellón ciudad y Grao</span></div>
-<div class="fact"><b>3 cubas</b><span>2 compactas + 1 de gran capacidad</span></div>
+<a class="btn btn-primary btn-lg" href="#presupuesto">Pedir precio<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+<a class="btn btn-outline btn-lg" href="tel:+34607462526"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Llamar al 607 462 526</a>
 </div>
 </div>
-<div class="panel">
-<div class="panel-top">
-<img src="img/cubax-logo-blanco.png" width="360" height="88" alt="Cubax, desatascos y limpiezas">
-<span class="status"><span class="dot"></span>Urgencias 24 h</span>
+<figure class="hero-media">
+<picture><source type="image/webp" srcset="img/portada-cuba-900.webp 900w, img/portada-cuba-1600.webp 1600w" sizes="(max-width:900px) 100vw, 46vw"><img src="img/portada-cuba-1600.jpg" width="1600" height="900" alt="Camión cuba compacto de Cubax con el equipo de aspiración y la manguera" fetchpriority="high"></picture>
+</figure>
 </div>
-<figure class="fleet-photo"><picture class="truck big"><source srcset="img/cuba-gran-capacidad.webp" type="image/webp"><img src="img/cuba-gran-capacidad.png" alt="Camión cuba de gran capacidad de Cubax" decoding="async"></picture><div class="fleet-photo-row"><picture class="truck"><source srcset="img/cuba-fuso-canter.webp" type="image/webp"><img src="img/cuba-fuso-canter.png" alt="Cuba compacta de Cubax (Mitsubishi Fuso Canter)" decoding="async"></picture><picture class="truck"><source srcset="img/cuba-sprinter.webp" type="image/webp"><img src="img/cuba-sprinter.png" alt="Cuba compacta de Cubax (Mercedes-Benz Sprinter)" decoding="async"></picture></div></figure>
-<p class="panel-title">Tres camiones cuba propios. Salimos a cualquier hora, también en festivos.</p>
-<ul class="checks">
-<li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Dos compactas para calles estrechas y garajes</li>
-<li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Una de gran capacidad para fosas y redes grandes</li>
-<li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Inspección con cámara e informe con fotos</li>
-</ul>
-<div class="group-line">Una empresa de <img src="img/grupo-trimodos-blanco.png" width="300" height="41" alt="Grupo Trimodos" loading="lazy"></div>
-</div>
+</section>
+
+<section class="proof" aria-label="Por qué elegir Cubax">
+<div class="wrap proof-grid">
+<div class="pf"><b>&lt; 60 min</b><span>de llegada en Castellón ciudad y el Grao</span></div>
+<div class="pf"><b>24 h</b><span>urgencias todos los días del año, también festivos</span></div>
+<div class="pf"><b>3 cubas</b><span>propias: 2 compactas y 1 de gran capacidad</span></div>
+<div class="pf"><b>Precio cerrado</b><span>antes de empezar el trabajo, sin sorpresas</span></div>
+<!-- AÑOS Y SERVICIOS: pendiente de cifras reales del cliente -->
+<div class="pf pf-grp"><span>Una empresa de</span><img src="img/grupo-trimodos.png" width="300" height="41" alt="Grupo Trimodos" loading="lazy"></div>
 </div>
 </section>
 
@@ -605,7 +735,7 @@ a:hover{color:var(--blue-d)}
 <li class="svc-row"><svg class="ic svc-ic" aria-hidden="true"><use href="#i-van"/></svg><div><h3>Camión cuba</h3><p>Aspiración y limpieza de arquetas, pozos y redes saturadas. Cuba compacta o de gran capacidad, según el acceso.</p></div><a class="btn btn-outline btn-sm" href="#presupuesto" data-pick-svc="2" aria-label="Pedir precio: camión cuba">Pedir precio</a></li>
 <li class="svc-row"><svg class="ic svc-ic" aria-hidden="true"><use href="#i-cam"/></svg><div><h3>Inspección con cámara</h3><p>Vemos el interior de la tubería y localizamos el atasco o la rotura sin obras. Con informe para el seguro.</p></div><a class="btn btn-outline btn-sm" href="#presupuesto" data-pick-svc="3" aria-label="Pedir precio: inspección con cámara">Pedir precio</a></li>
 <li class="svc-row"><svg class="ic svc-ic" aria-hidden="true"><use href="#i-sewer"/></svg><div><h3>Limpieza de alcantarillado</h3><p>Alcantarillado, imbornales y redes de saneamiento de comunidades, empresas y ayuntamientos.</p></div><a class="btn btn-outline btn-sm" href="#presupuesto" data-pick-svc="4" aria-label="Pedir precio: limpieza de alcantarillado">Pedir precio</a></li>
-<li class="svc-row"><svg class="ic svc-ic" aria-hidden="true"><use href="#i-cal"/></svg><div><h3>Mantenimiento preventivo</h3><p>Revisiones periódicas de tuberías, bajantes y arquetas para evitar atascos e inundaciones.</p></div><a class="btn btn-outline btn-sm" href="#presupuesto" data-pick-svc="5" aria-label="Pedir propuesta: mantenimiento preventivo">Pedir propuesta</a></li>
+<li class="svc-row"><svg class="ic svc-ic" aria-hidden="true"><use href="#i-cal"/></svg><div><h3>Mantenimiento preventivo</h3><p>Revisiones periódicas de tuberías, bajantes y arquetas para evitar atascos e inundaciones.</p></div><a class="btn btn-outline btn-sm" href="#presupuesto" data-pick-svc="5" aria-label="Pedir propuesta: mantenimiento preventivo">Pedir precio</a></li>
 </ul>
 </div>
 </div>
@@ -657,20 +787,9 @@ a:hover{color:var(--blue-d)}
 <p>Dos cubas compactas para los accesos difíciles y una de gran capacidad para los trabajos de volumen. En cada aviso enviamos el camión que mejor encaja con el acceso y con el trabajo.</p>
 </div>
 <div class="fleet">
-<article class="tk">
-<div class="tk-top"><span class="eq-lbl">Accesos difíciles</span><span class="qty"><b>2</b>unidades</span></div>
-<div class="tk-photos"><picture class="truck"><source srcset="img/cuba-fuso-canter.webp" type="image/webp"><img src="img/cuba-fuso-canter.png" alt="Cuba compacta de Cubax (Mitsubishi Fuso Canter)" loading="lazy" decoding="async"></picture><picture class="truck"><source srcset="img/cuba-sprinter.webp" type="image/webp"><img src="img/cuba-sprinter.png" alt="Cuba compacta de Cubax (Mercedes-Benz Sprinter)" loading="lazy" decoding="async"></picture></div>
-<h3>Cubas compactas</h3>
-<p>Entran donde un camión grande no cabe: cascos antiguos, calles estrechas, garajes, urbanizaciones y casas de campo. Ideales para desatascos, arquetas y fosas de viviendas.</p>
-<div class="uses"><span>Cascos antiguos</span><span>Calles estrechas</span><span>Garajes</span><span>Urbanizaciones</span><span>Casas de campo</span></div>
-</article>
-<article class="tk">
-<div class="tk-top"><span class="eq-lbl">Gran volumen</span><span class="qty"><b>1</b>unidad</span></div>
-<div class="tk-photos one"><picture class="truck"><source srcset="img/cuba-gran-capacidad.webp" type="image/webp"><img src="img/cuba-gran-capacidad.png" alt="Camión cuba de gran capacidad de Cubax" loading="lazy" decoding="async"></picture></div>
-<h3>Cuba de gran capacidad</h3>
-<p>Para los trabajos de mucho volumen: fosas sépticas y pozos negros grandes, alcantarillado, polígonos e industria. Menos viajes, más rapidez y traslado de residuos incluido.</p>
-<div class="uses"><span>Fosas grandes</span><span>Pozos negros</span><span>Alcantarillado</span><span>Industria</span><span>Ayuntamientos</span></div>
-</article>
+<figure class="fl fl-big"><picture><source type="image/webp" srcset="img/flota-gran-capacidad-720.webp 720w, img/flota-gran-capacidad-1200.webp 1200w" sizes="(max-width:900px) 100vw, 50vw"><img src="img/flota-gran-capacidad-1200.jpg" width="1200" height="900" alt="Camión cuba de gran capacidad de Cubax" loading="lazy" decoding="async"></picture><figcaption><b>Cuba de gran capacidad</b><span>Fosas y pozos negros grandes, alcantarillado, polígonos e industria. Menos viajes y traslado de residuos incluido.</span></figcaption></figure>
+<figure class="fl"><picture><source type="image/webp" srcset="img/flota-fuso-720.webp 720w, img/flota-fuso-1200.webp 1200w" sizes="(max-width:900px) 100vw, 50vw"><img src="img/flota-fuso-1200.jpg" width="1200" height="900" alt="Cuba compacta de Cubax sobre Mitsubishi Fuso Canter" loading="lazy" decoding="async"></picture><figcaption><b>Cuba compacta</b><span>Cascos antiguos, calles estrechas y garajes.</span></figcaption></figure>
+<figure class="fl"><picture><source type="image/webp" srcset="img/flota-sprinter-720.webp 720w, img/flota-sprinter-1200.webp 1200w" sizes="(max-width:900px) 100vw, 50vw"><img src="img/flota-sprinter-1200.jpg" width="1200" height="900" alt="Cuba compacta de Cubax sobre Mercedes-Benz Sprinter" loading="lazy" decoding="async"></picture><figcaption><b>Cuba compacta</b><span>Urbanizaciones, casas de campo y fosas de viviendas.</span></figcaption></figure>
 </div>
 <h3 class="sub-h">Equipos de diagnóstico y limpieza</h3>
 <div class="eq-grid">
@@ -689,7 +808,7 @@ a:hover{color:var(--blue-d)}
 </div>
 <div class="fleet-cta">
 <p><strong>¿No sabes qué camión necesitas?</strong> Cuéntanos cómo es el acceso y qué hay que hacer, y enviamos la cuba adecuada.</p>
-<a class="btn btn-white" href="#presupuesto" data-pick-svc="2">Pedir camión cuba</a>
+<a class="btn btn-white" href="#presupuesto" data-pick-svc="2">Pedir precio</a>
 </div>
 </div>
 </section>
@@ -711,7 +830,7 @@ a:hover{color:var(--blue-d)}
 </div>
 <div class="cl-maint">
 <div><h3>Mantenimiento preventivo</h3><p>Revisiones periódicas de tuberías y arquetas para evitar atascos e inundaciones.</p></div>
-<a class="btn btn-white" href="#presupuesto" data-pick-svc="5">Solicitar propuesta</a>
+<a class="btn btn-white" href="#presupuesto" data-pick-svc="5">Pedir precio</a>
 </div>
 </div>
 </section>
@@ -835,7 +954,7 @@ a:hover{color:var(--blue-d)}
 <p class="s">Añade Cubax a los contactos de tu móvil en un solo paso y tendrás el servicio de urgencias a mano cuando lo necesites.</p>
 <div class="ctas">
 <button class="btn btn-white" type="button" data-save><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg>Guardar contacto</button>
-<a class="btn btn-ghost" href="tel:+34607462526">Llamar ahora</a>
+<a class="btn btn-ghost" href="tel:+34607462526">Llamar al 607 462 526</a>
 </div>
 <div class="saved" id="saved-msg" hidden><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Abre el archivo descargado y pulsa «Añadir a contactos».</div>
 </div>
