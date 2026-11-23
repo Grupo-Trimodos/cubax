@@ -1,0 +1,14 @@
+// Cloudflare Workers (solo archivos estáticos) — despliegue de cubax.es
+// Redirecciones: _redirects · Cabeceras: _headers · Excluidos de la publicación: .assetsignore
+// www.cubax.es → cubax.es se hace con una Redirect Rule en el panel de Cloudflare (no se puede por host en _redirects).
+{
+  "name": "cubax",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./",
+    // /aviso-legal sirve aviso-legal.html y /aviso-legal.html redirige a /aviso-legal
+    "html_handling": "auto-trailing-slash",
+    // Rutas inexistentes sirven 404.html con estado 404
+    "not_found_handling": "404-page"
+  }
+}

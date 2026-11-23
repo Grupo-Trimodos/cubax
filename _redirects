@@ -1,0 +1,9 @@
+# URLs .php del hosting antiguo (indexadas en Google) → páginas nuevas, 301 permanente
+/index.php                                                  /                       301
+/desatascos-castellon.php                                   /                       301
+/desatascos-para-aseguradoras-con-clientes-en-castellon.php /                       301
+/desatascos-para-ayuntamientos-en-castellon.php             /                       301
+/desatascos-para-administradores-de-fincas-en-castellon.php /                       301
+/aviso-legal.php                                            /aviso-legal            301
+/politica-privacidad.php                                    /politica-privacidad    301
+/cookies.php                                                /cookies                301

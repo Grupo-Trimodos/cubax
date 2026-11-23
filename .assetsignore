@@ -1,0 +1,6 @@
+# Archivos del repo que NO se publican en cubax.es (sintaxis .gitignore)
+# Ojo: ".*" excluye también .well-known/ si algún día hiciera falta; en ese caso añadir "!.well-known/"
+.*
+wrangler.jsonc
+skills-lock.json
+node_modules/
